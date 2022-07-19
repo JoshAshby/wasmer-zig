@@ -53,7 +53,7 @@ pub fn build(b: *std.build.Builder) !void {
     executable.setBuildMode(mode);
     executable.addPackage(.{
         .name = "wasmer",
-        .path = .{.path = "src/main.zig"},
+        .source = .{ .path = "src/main.zig" },
         .dependencies = &.{pkgs.wasm},
     });
     if (wasmer_lib_dir) |lib_dir| {
